@@ -8,6 +8,8 @@ Documentation formats (Markdown and Mermaid in the README and ARCHITECTURE files
 
 Every file follows the same nine headings: what it is, why this repository uses it, where it appears, how it works underneath, a walkthrough of this repository's own files, things to try, common mistakes, five questions with answers, and the official documentation.
 
+The walkthrough of each note has two parts. The first explains the key ideas with chosen quotes. The second, under the heading "Every line, in order", quotes every non-blank line of every code and configuration file that note is responsible for, in blocks with their line numbers, and explains each block. Ideas such as a process, a port, an environment variable, a transaction or a certificate are explained the first time a block needs them.
+
 ## The files
 
 | File | Its role in this repository |
@@ -91,3 +93,109 @@ Read these three, in this order:
 - [Managed identity and Azure RBAC](azure-managed-identity-rbac.md)
 - [azure-identity (and azure-core)](azure-identity.md)
 - [Terraform](terraform.md)
+
+## Where every file is explained, line by line
+
+Every code and configuration file of the repository is explained line by line in exactly one of the notes (the section "Every line, in order"). Files that are not listed here are documentation (Markdown), the license, generated lock files (the format is explained in the notes on lock files), or an example environment file that is described by its purpose only.
+
+| File | Non-blank lines | Explained in |
+|---|---|---|
+| `.checkov.yaml` | 14 | [checkov.md](checkov.md) |
+| `.dockerignore` | 17 | [docker.md](docker.md) |
+| `.editorconfig` | 14 | [editorconfig.md](editorconfig.md) |
+| `.github/workflows/ci.yml` | 41 | [github-actions.md](github-actions.md) |
+| `.gitignore` | 26 | [git.md](git.md) |
+| `.tflint.hcl` | 13 | [tflint.md](tflint.md) |
+| `Dockerfile` | 21 | [docker.md](docker.md) |
+| `Makefile` | 78 | [make.md](make.md) |
+| `infra/environments/dev/backend.hcl.example` | 7 | [terraform.md](terraform.md) |
+| `infra/environments/dev/main.tf` | 152 | [terraform.md](terraform.md) |
+| `infra/environments/dev/outputs.tf` | 68 | [terraform.md](terraform.md) |
+| `infra/environments/dev/providers.tf` | 17 | [terraform-providers.md](terraform-providers.md) |
+| `infra/environments/dev/terraform.tfvars.example` | 15 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 168 | [terraform.md](terraform.md) |
+| `infra/environments/dev/variables.tf` | 92 | [terraform.md](terraform.md) |
+| `infra/environments/dev/versions.tf` | 16 | [terraform-providers.md](terraform-providers.md) |
+| `infra/modules/budget/main.tf` | 19 | [azure-resources-and-budgets.md](azure-resources-and-budgets.md) |
+| `infra/modules/budget/outputs.tf` | 4 | [terraform.md](terraform.md) |
+| `infra/modules/budget/tests/budget.tftest.hcl` | 29 | [terraform.md](terraform.md) |
+| `infra/modules/budget/variables.tf` | 41 | [terraform.md](terraform.md) |
+| `infra/modules/budget/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/main.tf` | 66 | [azure-container-apps.md](azure-container-apps.md) |
+| `infra/modules/container_app/outputs.tf` | 12 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 75 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/variables.tf` | 93 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/main.tf` | 18 | [azure-container-registry.md](azure-container-registry.md) |
+| `infra/modules/container_registry/outputs.tf` | 12 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/tests/container_registry.tftest.hcl` | 20 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/variables.tf` | 30 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/main.tf` | 27 | [azure-key-vault.md](azure-key-vault.md) |
+| `infra/modules/key_vault/outputs.tf` | 12 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/tests/key_vault.tftest.hcl` | 50 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/variables.tf` | 52 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/main.tf` | 8 | [azure-monitor-log-analytics.md](azure-monitor-log-analytics.md) |
+| `infra/modules/log_analytics/outputs.tf` | 12 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/tests/log_analytics.tftest.hcl` | 20 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/variables.tf` | 26 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/main.tf` | 9 | [azure-managed-identity-rbac.md](azure-managed-identity-rbac.md) |
+| `infra/modules/role_assignments/outputs.tf` | 10 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/tests/role_assignments.tftest.hcl` | 74 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/variables.tf` | 31 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/main.tf` | 54 | [azure-storage.md](azure-storage.md) |
+| `infra/modules/storage_uploads/outputs.tf` | 20 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/tests/storage_uploads.tftest.hcl` | 50 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/variables.tf` | 52 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/main.tf` | 6 | [azure-managed-identity-rbac.md](azure-managed-identity-rbac.md) |
+| `infra/modules/user_assigned_identity/outputs.tf` | 16 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/tests/user_assigned_identity.tftest.hcl` | 14 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/variables.tf` | 17 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/versions.tf` | 9 | [terraform.md](terraform.md) |
+| `pyproject.toml` | 83 | [pyproject-toml.md](pyproject-toml.md) |
+| `scripts/audit-config.sh` | 23 | [bash.md](bash.md) |
+| `scripts/break-and-measure.sh` | 50 | [bash.md](bash.md) |
+| `scripts/build-and-deploy.sh` | 27 | [bash.md](bash.md) |
+| `scripts/docker-smoke.sh` | 23 | [bash.md](bash.md) |
+| `scripts/lib.sh` | 31 | [bash.md](bash.md) |
+| `scripts/prove-key-access-closed.sh` | 12 | [bash.md](bash.md) |
+| `scripts/provision.sh` | 34 | [bash.md](bash.md) |
+| `scripts/read-denials.sh` | 29 | [bash.md](bash.md) |
+| `scripts/seed-secret.sh` | 13 | [bash.md](bash.md) |
+| `scripts/smoke.sh` | 23 | [bash.md](bash.md) |
+| `scripts/teardown.sh` | 26 | [bash.md](bash.md) |
+| `src/secretless_app/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/application/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/application/check_health.py` | 12 | [python.md](python.md) |
+| `src/secretless_app/application/ports.py` | 14 | [python.md](python.md) |
+| `src/secretless_app/application/save_upload.py` | 17 | [python.md](python.md) |
+| `src/secretless_app/application/services.py` | 9 | [python.md](python.md) |
+| `src/secretless_app/domain/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/domain/blob_name.py` | 16 | [python.md](python.md) |
+| `src/secretless_app/domain/errors.py` | 20 | [python.md](python.md) |
+| `src/secretless_app/domain/health.py` | 6 | [python.md](python.md) |
+| `src/secretless_app/domain/secret.py` | 17 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 43 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `src/secretless_app/infrastructure/azure_errors.py` | 35 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/logging.py` | 29 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/memory_adapters.py` | 38 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/settings.py` | 65 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/wiring.py` | 25 | [python.md](python.md) |
+| `src/secretless_app/interfaces/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/interfaces/http.py` | 77 | [flask.md](flask.md) |
+| `src/secretless_app/interfaces/wsgi.py` | 12 | [gunicorn.md](gunicorn.md) |
+| `tests/conftest.py` | 15 | [pytest.md](pytest.md) |
+| `tests/e2e/test_server.py` | 87 | [pytest.md](pytest.md) |
+| `tests/integration/test_azure_live.py` | 25 | [pytest.md](pytest.md) |
+| `tests/unit/application/test_use_cases.py` | 45 | [pytest.md](pytest.md) |
+| `tests/unit/domain/test_blob_name_and_secret.py` | 22 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_azure_adapters.py` | 54 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_azure_errors.py` | 65 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_logging_and_wiring.py` | 41 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_settings.py` | 37 | [pytest.md](pytest.md) |
+| `tests/unit/interfaces/test_http.py` | 74 | [pytest.md](pytest.md) |
