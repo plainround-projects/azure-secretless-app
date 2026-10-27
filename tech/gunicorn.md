@@ -170,6 +170,18 @@ Names used here:
 
 - `from_env` is the repository's own: Read and validate `env`; raise `ConfigError` naming every problem at once (defined in `src/secretless_app/infrastructure/settings.py`)
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `tests/e2e/test_server.py` | 1, 32, 63, 98 | [pytest.md](pytest.md) |
+| `pyproject.toml` | 15, 62, 91 | [pyproject-toml.md](pyproject-toml.md) |
+| `Dockerfile` | 21 to 22 | [docker.md](docker.md) |
+| `Makefile` | 31, 34 | [make.md](make.md) |
+
 ## Try it yourself
 
 Check the installed gunicorn.

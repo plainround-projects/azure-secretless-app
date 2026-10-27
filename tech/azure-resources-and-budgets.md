@@ -137,6 +137,25 @@ resource "azurerm_consumption_budget_subscription" "this" {
 - `contact_emails = var.contact_emails`: `contact_emails`: The e-mail addresses that receive the alert. Here: the input variable `contact_emails` (Addresses that receive the alerts).
 - Closing lines: `}` end the blocks opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/environments/dev/main.tf` | 20, 73, 83 to 84, 92 to 93, 101 to 102, 110 to 111, 122 to 123, 132 to 133, 149 to 150, 170 to 178 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 167, 171, 174, 177, 181 to 182, 186 to 187, 195, 200 | [terraform.md](terraform.md) |
+| `infra/environments/dev/variables.tf` | 84 to 85, 90 to 91, 96 to 97, 102 to 103 | [terraform.md](terraform.md) |
+| `infra/environments/dev/terraform.tfvars.example` | 13 to 16 | [terraform.md](terraform.md) |
+| `infra/modules/budget/tests/budget.tftest.hcl` | 4, 15 to 16, 30 | [terraform.md](terraform.md) |
+| `scripts/provision.sh` | 3, 23, 29 to 30 | [bash.md](bash.md) |
+| `infra/modules/budget/variables.tf` | 7, 27, 42 | [terraform.md](terraform.md) |
+| `Makefile` | 99 | [make.md](make.md) |
+| `infra/environments/dev/outputs.tf` | 3 | [terraform.md](terraform.md) |
+| `infra/modules/budget/outputs.tf` | 3 | [terraform.md](terraform.md) |
+| `scripts/teardown.sh` | 15 | [bash.md](bash.md) |
+
 ## Try it yourself
 
 Run the budget tests (thresholds, first-of-month rule).

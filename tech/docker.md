@@ -346,6 +346,20 @@ CMD ["sh", "-c", "exec gunicorn --bind 0.0.0.0:${PORT} --workers 2 --threads 4 -
 
 `CMD [...]` is the command the container runs when it starts. It uses `sh -c` so that `${PORT}` is expanded, and `exec` replaces the shell with gunicorn, so gunicorn is the main process and receives the stop signal directly. The options: `--bind 0.0.0.0:${PORT}` listens on all network interfaces inside the container; `--workers 2 --threads 4` runs two worker processes with four threads each; `--timeout 30` restarts a worker stuck for 30 seconds; `--graceful-timeout 20` gives workers 20 seconds to finish on shutdown; `--access-logfile -` writes the access log to standard output. The last argument, `secretless_app.interfaces.wsgi:create()`, names the function that builds the web app.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `scripts/docker-smoke.sh` | 4, 7 to 14, 17 to 18, 24 to 25 | [bash.md](bash.md) |
+| `Makefile` | 14, 81 to 85 | [make.md](make.md) |
+| `scripts/build-and-deploy.sh` | 4, 16, 19 to 20 | [bash.md](bash.md) |
+| `scripts/audit-config.sh` | 25 to 26, 29 | [bash.md](bash.md) |
+| `.checkov.yaml` | 1, 8 | [checkov.md](checkov.md) |
+| `.github/workflows/ci.yml` | 32, 47 | [github-actions.md](github-actions.md) |
+
 ## Try it yourself
 
 See the two stages and the pinned base.

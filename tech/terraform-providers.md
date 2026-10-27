@@ -207,6 +207,52 @@ terraform {
 - `# backend "azurerm" {}`: Comment for the reader: backend "azurerm" {}
 - Closing lines: `}` end the blocks opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/environments/dev/main.tf` | 73, 83 to 84, 92 to 93, 101 to 102, 110 to 111, 122 to 123, 132 to 133, 149 to 150 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 1, 4 to 5, 11, 17, 22, 28, 33, 38, 46, 55, 195, 200 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 1, 24, 29, 34, 43, 48 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/main.tf` | 1, 38 to 41, 45 to 47 | [azure-storage.md](azure-storage.md) |
+| `infra/modules/storage_uploads/tests/storage_uploads.tftest.hcl` | 1, 14, 19, 28, 37, 42 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/outputs.tf` | 3, 8, 13, 18, 23 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/tests/key_vault.tftest.hcl` | 1, 15, 24, 33 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/outputs.tf` | 3, 8, 13, 18 | [terraform.md](terraform.md) |
+| `.tflint.hcl` | 1, 11, 14 | [tflint.md](tflint.md) |
+| `infra/modules/budget/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/main.tf` | 1, 9, 12 | [azure-container-apps.md](azure-container-apps.md) |
+| `infra/modules/container_app/outputs.tf` | 3, 8, 13 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/outputs.tf` | 3, 8, 13 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/main.tf` | 1, 22 to 24 | [azure-key-vault.md](azure-key-vault.md) |
+| `infra/modules/key_vault/outputs.tf` | 3, 8, 13 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/outputs.tf` | 3, 8, 13 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/tests/role_assignments.tftest.hcl` | 1, 17, 22 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/versions.tf` | 4 to 6 | [terraform.md](terraform.md) |
+| `.gitignore` | 17, 28 | [git.md](git.md) |
+| `infra/modules/budget/tests/budget.tftest.hcl` | 1, 15 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/tests/container_registry.tftest.hcl` | 1, 13 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/tests/log_analytics.tftest.hcl` | 1, 13 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/tests/user_assigned_identity.tftest.hcl` | 1, 14 | [terraform.md](terraform.md) |
+| `Makefile` | 70 | [make.md](make.md) |
+| `infra/environments/dev/outputs.tf` | 3 | [terraform.md](terraform.md) |
+| `infra/modules/budget/main.tf` | 1 | [azure-resources-and-budgets.md](azure-resources-and-budgets.md) |
+| `infra/modules/budget/outputs.tf` | 3 | [terraform.md](terraform.md) |
+| `infra/modules/container_registry/main.tf` | 1 | [azure-container-registry.md](azure-container-registry.md) |
+| `infra/modules/log_analytics/main.tf` | 1 | [azure-monitor-log-analytics.md](azure-monitor-log-analytics.md) |
+| `infra/modules/role_assignments/main.tf` | 1 | [azure-managed-identity-rbac.md](azure-managed-identity-rbac.md) |
+| `infra/modules/role_assignments/outputs.tf` | 4 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/main.tf` | 1 | [azure-managed-identity-rbac.md](azure-managed-identity-rbac.md) |
+
 ## Try it yourself
 
 See the locked versions.

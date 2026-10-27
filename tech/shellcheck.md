@@ -31,6 +31,14 @@ When a script does `source other.sh`, ShellCheck cannot know which file that is 
 
 `-x` follows `source` lines; `-P SCRIPTDIR` says "look for sourced files next to the script that sources them", which is where `lib.sh` is. The shell glob `scripts/*.sh` expands to every script. In this repository ShellCheck found three things during the build: an unused variable (`APP_VERSION` was exported to fix it), a declare-and-assign that hides an error code (SC2155, fixed by splitting into two lines) and `A && B || C` used as if-then-else (SC2015, rewritten as `if`).
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `Makefile` | 36, 41 | [make.md](make.md) |
+
 ## Try it yourself
 
 Lint every script at the strictest severity.

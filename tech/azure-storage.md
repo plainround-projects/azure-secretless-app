@@ -231,6 +231,46 @@ resource "azurerm_monitor_diagnostic_setting" "blob" {
 - `category = "StorageDelete"`: `category`: The name of one log category to send (for example `AuditEvent`). Here: the text `"StorageDelete"`.
 - Closing lines: `}` end the blocks opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `tests/unit/application/test_use_cases.py` | 31 to 34, 37 to 39, 42, 53 to 56, 59 | [pytest.md](pytest.md) |
+| `tests/unit/interfaces/test_http.py` | 19, 22, 35, 39, 43, 52, 56, 59 to 61, 65, 69 | [pytest.md](pytest.md) |
+| `infra/modules/storage_uploads/tests/storage_uploads.tftest.hcl` | 14, 19, 24, 28 to 29, 33, 37, 42 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 11, 14, 17 to 19, 88 to 89, 125 | [terraform.md](terraform.md) |
+| `infra/modules/role_assignments/tests/role_assignments.tftest.hcl` | 5, 8, 17, 22, 32, 48, 80 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/outputs.tf` | 3, 8, 11 to 13, 18, 22 to 23 | [terraform.md](terraform.md) |
+| `src/secretless_app/infrastructure/memory_adapters.py` | 4, 7, 34, 38, 42, 45, 49 | [python.md](python.md) |
+| `tests/unit/infrastructure/test_azure_adapters.py` | 10, 37, 58 to 59, 65 to 66, 70 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_azure_errors.py` | 42, 59 to 60, 73, 79, 85, 90 | [pytest.md](pytest.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 5 to 7, 38, 52 to 56 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `src/secretless_app/application/save_upload.py` | 1, 6, 12 to 14, 22 | [python.md](python.md) |
+| `scripts/break-and-measure.sh` | 3, 18 to 20, 30 | [bash.md](bash.md) |
+| `src/secretless_app/infrastructure/wiring.py` | 15, 18, 24, 27 | [python.md](python.md) |
+| `scripts/read-denials.sh` | 4, 12, 27 | [bash.md](bash.md) |
+| `src/secretless_app/application/ports.py` | 5, 18, 21 | [python.md](python.md) |
+| `src/secretless_app/domain/blob_name.py` | 1, 13, 21 | [python.md](python.md) |
+| `tests/conftest.py` | 15, 20 to 22 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_logging_and_wiring.py` | 11, 17, 49 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_settings.py` | 7, 38 to 40 | [pytest.md](pytest.md) |
+| `Makefile` | 33 to 34 | [make.md](make.md) |
+| `infra/environments/dev/outputs.tf` | 17, 23 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/variables.tf` | 44, 55 | [terraform.md](terraform.md) |
+| `scripts/smoke.sh` | 27 to 28 | [bash.md](bash.md) |
+| `tests/e2e/test_server.py` | 80 to 81 | [pytest.md](pytest.md) |
+| `tests/integration/test_azure_live.py` | 11, 32 | [pytest.md](pytest.md) |
+| `infra/environments/dev/main.tf` | 162 | [terraform.md](terraform.md) |
+| `infra/environments/dev/variables.tf` | 56 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 16 | [terraform.md](terraform.md) |
+| `pyproject.toml` | 18 | [pyproject-toml.md](pyproject-toml.md) |
+| `src/secretless_app/domain/errors.py` | 9 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/settings.py` | 8 | [python.md](python.md) |
+| `tests/unit/domain/test_blob_name_and_secret.py` | 3 | [pytest.md](pytest.md) |
+
 ## Try it yourself
 
 Run the module's tests.

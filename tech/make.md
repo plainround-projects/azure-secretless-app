@@ -485,6 +485,20 @@ clean:
 - `rm -rf $(VENV) .pytest_cache .mypy_cache .ruff_cache .import_linter_cache .coverage dist`: Deletes the environment and every cache and build folder. `-r` recurses into folders and `-f` ignores missing ones.
 - `find infra -name .terraform -type d -prune -exec rm -rf {} +`: Finds every folder named `.terraform` under `infra`, does not descend into it (`-prune`) and deletes it (`-exec rm -rf {} +` runs `rm` on all matches).
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `.github/workflows/ci.yml` | 28 to 29, 40, 47 | [github-actions.md](github-actions.md) |
+| `.editorconfig` | 14 | [editorconfig.md](editorconfig.md) |
+| `infra/environments/dev/variables.tf` | 45 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/main.tf` | 37 | [azure-storage.md](azure-storage.md) |
+| `pyproject.toml` | 61 | [pyproject-toml.md](pyproject-toml.md) |
+| `tests/integration/test_azure_live.py` | 3 | [pytest.md](pytest.md) |
+
 ## Try it yourself
 
 Print the menu that the `##` comments produce.

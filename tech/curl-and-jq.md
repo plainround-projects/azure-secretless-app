@@ -53,6 +53,19 @@ jq -r '.properties.template.containers[].env[] | "\(.name)=\(.value // "<secretR
 
 `jq -r` prints raw text. `.properties.template.containers[].env[]` walks every environment variable of every container. `"\(.name)=\(.value // ...)"` builds the text `NAME=value`, and `//` gives a fallback when a value is missing (a variable that points at a secret would show `secretRef`).
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `scripts/docker-smoke.sh` | 7, 15, 20 to 22 | [bash.md](bash.md) |
+| `scripts/break-and-measure.sh` | 7, 21, 27 | [bash.md](bash.md) |
+| `scripts/smoke.sh` | 5, 19, 25 | [bash.md](bash.md) |
+| `scripts/audit-config.sh` | 16, 19 | [bash.md](bash.md) |
+| `scripts/build-and-deploy.sh` | 8, 30 | [bash.md](bash.md) |
+| `Makefile` | 84 | [make.md](make.md) |
+
 ## Try it yourself
 
 Check the tools exist.

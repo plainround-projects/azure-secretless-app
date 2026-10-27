@@ -71,6 +71,16 @@ The use case builds a `BlobName` first (an invalid name raises before any call),
 
 The storage account has shared key access switched off, so a connection string or account key would fail with `KeyBasedAuthenticationNotPermitted`. The code never has one. See `azure-storage.md`.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `tests/unit/infrastructure/test_azure_adapters.py` | 32, 60, 67 | [pytest.md](pytest.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 5, 42 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `pyproject.toml` | 18 | [pyproject-toml.md](pyproject-toml.md) |
+
 ## Try it yourself
 
 Confirm the pinned version.

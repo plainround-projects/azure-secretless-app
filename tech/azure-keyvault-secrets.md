@@ -321,6 +321,16 @@ Names used here:
 
 - `upload_blob` is the repository's own: no description in the code (defined in `tests/unit/infrastructure/test_azure_adapters.py`)
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `tests/unit/infrastructure/test_azure_adapters.py` | 20, 45, 52 | [pytest.md](pytest.md) |
+| `pyproject.toml` | 17 | [pyproject-toml.md](pyproject-toml.md) |
+
 ## Try it yourself
 
 Confirm the pinned version.

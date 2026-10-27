@@ -454,6 +454,16 @@ Names used here:
 - `LOGGER.info(...)` writes a record at level INFO (normal events).
 - `round(x, n)` rounds to `n` decimal places.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `pyproject.toml` | 14, 88, 91 | [pyproject-toml.md](pyproject-toml.md) |
+| `src/secretless_app/interfaces/wsgi.py` | 5, 13 | [gunicorn.md](gunicorn.md) |
+
 ## Try it yourself
 
 Check the installed Flask and Werkzeug versions.

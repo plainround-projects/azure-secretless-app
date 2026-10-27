@@ -81,6 +81,32 @@ az monitor log-analytics query --workspace "$WORKSPACE" --analytics-query "$QUER
 
 Runs a KQL query in the workspace identified by its customer id.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `scripts/provision.sh` | 8, 18, 24 to 28 | [bash.md](bash.md) |
+| `scripts/teardown.sh` | 6, 17 to 21, 27 to 29 | [bash.md](bash.md) |
+| `scripts/break-and-measure.sh` | 7, 20, 26, 48, 52 | [bash.md](bash.md) |
+| `infra/environments/dev/outputs.tf` | 7, 17, 32, 62 | [terraform.md](terraform.md) |
+| `scripts/build-and-deploy.sh` | 3, 8, 18, 23 | [bash.md](bash.md) |
+| `scripts/smoke.sh` | 5, 14 to 15, 28 | [bash.md](bash.md) |
+| `Makefile` | 30, 60, 87 | [make.md](make.md) |
+| `infra/environments/dev/variables.tf` | 2, 12, 56 | [terraform.md](terraform.md) |
+| `infra/environments/dev/terraform.tfvars.example` | 1, 10 | [terraform.md](terraform.md) |
+| `scripts/audit-config.sh` | 6, 13 | [bash.md](bash.md) |
+| `scripts/prove-key-access-closed.sh` | 5, 9 | [bash.md](bash.md) |
+| `scripts/read-denials.sh` | 7, 31 | [bash.md](bash.md) |
+| `scripts/seed-secret.sh` | 6, 14 | [bash.md](bash.md) |
+| `infra/modules/container_registry/outputs.tf` | 7 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/variables.tf` | 22 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/outputs.tf` | 12 | [terraform.md](terraform.md) |
+| `pyproject.toml` | 61 | [pyproject-toml.md](pyproject-toml.md) |
+| `scripts/lib.sh` | 21 | [bash.md](bash.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 17 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+
 ## Try it yourself
 
 Check the version.

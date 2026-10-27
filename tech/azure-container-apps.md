@@ -443,6 +443,18 @@ resource "azurerm_container_app" "this" {
 
 - Closing line: `}` ends the block opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 24, 29, 34, 43, 48 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 33, 38 to 40, 152 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/outputs.tf` | 3, 8, 13 | [terraform.md](terraform.md) |
+| `scripts/audit-config.sh` | 13 | [bash.md](bash.md) |
+
 ## Try it yourself
 
 Run the module tests, which try credential-shaped variables and `:latest`.

@@ -60,6 +60,15 @@ allow_indirect_imports = true
 
 The first contract is `type = "layers"`. The list is ordered from the top: `interfaces`, then `infrastructure`, `application`, `domain`. A higher layer may import a lower one; a lower one must never import a higher one. The second contract, `forbidden`, says the `domain` and `application` packages may not import `azure`, `flask`, `werkzeug` or `gunicorn`. The third forbids `interfaces` from importing `azure` directly. It carries `allow_indirect_imports = true` because the interfaces layer reaches the SDK through the infrastructure layer on purpose; without that line the contract failed when first written, which is the lesson to keep.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `pyproject.toml` | 27, 73, 77, 87, 93 | [pyproject-toml.md](pyproject-toml.md) |
+| `Makefile` | 36, 40 | [make.md](make.md) |
+
 ## Try it yourself
 
 Check the three contracts.

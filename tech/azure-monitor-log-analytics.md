@@ -110,6 +110,30 @@ resource "azurerm_log_analytics_workspace" "this" {
 - `tags                = var.tags`: `tags`: Tags are name/value labels attached to the thing. They do not change behavior; they identify the owner, project and environment and make cost reports readable. Here: the input variable `tags` (Tags applied to the workspace).
 - Closing line: `}` ends the block opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/environments/dev/main.tf` | 79 to 80, 113, 124, 151 | [terraform.md](terraform.md) |
+| `infra/environments/dev/outputs.tf` | 56 to 58, 61 to 63 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/outputs.tf` | 3, 8, 12 to 13 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/main.tf` | 23 to 25 | [azure-key-vault.md](azure-key-vault.md) |
+| `infra/modules/storage_uploads/main.tf` | 46 to 48 | [azure-storage.md](azure-storage.md) |
+| `scripts/read-denials.sh` | 10, 31 | [bash.md](bash.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 28 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/main.tf` | 5 | [azure-container-apps.md](azure-container-apps.md) |
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 8 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/variables.tf` | 21 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/tests/key_vault.tftest.hcl` | 8 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/variables.tf` | 31 | [terraform.md](terraform.md) |
+| `infra/modules/log_analytics/tests/log_analytics.tftest.hcl` | 13 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/tests/storage_uploads.tftest.hcl` | 7 | [terraform.md](terraform.md) |
+| `infra/modules/storage_uploads/variables.tf` | 54 | [terraform.md](terraform.md) |
+| `src/secretless_app/infrastructure/logging.py` | 1 | [python.md](python.md) |
+
 ## Try it yourself
 
 Run the workspace tests.

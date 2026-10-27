@@ -4355,6 +4355,31 @@ terraform {
 - `version = "~> 4.81"`: Entry `version`: the text `"~> 4.81"`.
 - Closing lines: `}` end the blocks opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `Makefile` | 36, 42, 47, 50, 66 to 67, 70 to 73, 104 | [make.md](make.md) |
+| `scripts/provision.sh` | 8, 21, 34 to 35 | [bash.md](bash.md) |
+| `.gitignore` | 17 to 18, 28 | [git.md](git.md) |
+| `.dockerignore` | 11 to 12 | [docker.md](docker.md) |
+| `.github/workflows/ci.yml` | 21, 25 | [github-actions.md](github-actions.md) |
+| `.tflint.hcl` | 6, 14 | [tflint.md](tflint.md) |
+| `infra/environments/dev/versions.tf` | 1, 16 | [terraform-providers.md](terraform-providers.md) |
+| `scripts/break-and-measure.sh` | 7, 57 | [bash.md](bash.md) |
+| `scripts/build-and-deploy.sh` | 8, 26 | [bash.md](bash.md) |
+| `scripts/teardown.sh` | 6, 15 | [bash.md](bash.md) |
+| `.checkov.yaml` | 10 | [checkov.md](checkov.md) |
+| `scripts/audit-config.sh` | 6 | [bash.md](bash.md) |
+| `scripts/lib.sh` | 25 | [bash.md](bash.md) |
+| `scripts/prove-key-access-closed.sh` | 5 | [bash.md](bash.md) |
+| `scripts/read-denials.sh` | 7 | [bash.md](bash.md) |
+| `scripts/seed-secret.sh` | 6 | [bash.md](bash.md) |
+| `scripts/smoke.sh` | 5 | [bash.md](bash.md) |
+
 ## Try it yourself
 
 Check the syntax and every argument.

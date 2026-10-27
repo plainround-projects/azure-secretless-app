@@ -47,6 +47,15 @@ disallow_untyped_calls = false
 
 Return types such as `-> tuple[Response, int]` on the Flask routes, `str | None` on settings that may be absent, and the `Protocol` ports: if an adapter's method differs from the port's signature, mypy says so even though Python would not.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `pyproject.toml` | 26, 45, 51 | [pyproject-toml.md](pyproject-toml.md) |
+| `Makefile` | 36, 39 | [make.md](make.md) |
+
 ## Try it yourself
 
 Run the type checker over source and tests.

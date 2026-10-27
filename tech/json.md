@@ -52,6 +52,21 @@ A `logging.Formatter` turns a log record into text. This one builds a dictionary
 
 The error answers are JSON too, with a fixed `error` name a client can test for.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `src/secretless_app/infrastructure/logging.py` | 1 to 3, 13, 16, 26, 30 | [python.md](python.md) |
+| `tests/e2e/test_server.py` | 3, 58 to 60, 86 | [pytest.md](pytest.md) |
+| `tests/unit/infrastructure/test_logging_and_wiring.py` | 1, 14, 29 | [pytest.md](pytest.md) |
+| `tests/unit/interfaces/test_http.py` | 1, 100 | [pytest.md](pytest.md) |
+| `.editorconfig` | 11 | [editorconfig.md](editorconfig.md) |
+| `scripts/audit-config.sh` | 13 | [bash.md](bash.md) |
+| `scripts/smoke.sh` | 28 | [bash.md](bash.md) |
+| `tests/unit/infrastructure/test_azure_errors.py` | 21 | [pytest.md](pytest.md) |
+
 ## Try it yourself
 
 Print one structured log line.

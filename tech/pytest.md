@@ -2169,6 +2169,18 @@ Names used here:
 
 - `json.dumps(x)` turns Python data into JSON text.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `Makefile` | 54, 58, 61, 103 | [make.md](make.md) |
+| `pyproject.toml` | 23 to 24, 57 | [pyproject-toml.md](pyproject-toml.md) |
+| `.dockerignore` | 6 | [docker.md](docker.md) |
+| `.gitignore` | 7 | [git.md](git.md) |
+
 ## Try it yourself
 
 Run the domain tests.

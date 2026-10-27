@@ -189,6 +189,31 @@ resource "azurerm_user_assigned_identity" "this" {
 - `tags                = var.tags`: `tags`: Tags are name/value labels attached to the thing. They do not change behavior; they identify the owner, project and environment and make cost reports readable. Here: the input variable `tags` (Tags applied to the identity).
 - Closing line: `}` ends the block opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/modules/user_assigned_identity/outputs.tf` | 3, 7 to 8, 12 to 13, 18 | [terraform.md](terraform.md) |
+| `scripts/smoke.sh` | 2, 13 to 16 | [bash.md](bash.md) |
+| `infra/environments/dev/main.tf` | 89, 98, 160 | [terraform.md](terraform.md) |
+| `infra/environments/dev/tests/dev.tftest.hcl` | 46, 55, 74 | [terraform.md](terraform.md) |
+| `infra/environments/dev/outputs.tf` | 47, 77 | [terraform.md](terraform.md) |
+| `infra/modules/container_app/tests/container_app.tftest.hcl` | 14, 29 | [terraform.md](terraform.md) |
+| `infra/modules/user_assigned_identity/tests/user_assigned_identity.tftest.hcl` | 10, 14 | [terraform.md](terraform.md) |
+| `scripts/break-and-measure.sh` | 48, 52 | [bash.md](bash.md) |
+| `scripts/lib.sh` | 27, 33 | [bash.md](bash.md) |
+| `tests/unit/infrastructure/test_settings.py` | 8, 23 | [pytest.md](pytest.md) |
+| `infra/modules/container_app/main.tf` | 17 | [azure-container-apps.md](azure-container-apps.md) |
+| `infra/modules/container_app/variables.tf` | 67 | [terraform.md](terraform.md) |
+| `pyproject.toml` | 8 | [pyproject-toml.md](pyproject-toml.md) |
+| `scripts/provision.sh` | 2 | [bash.md](bash.md) |
+| `src/secretless_app/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 17 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `src/secretless_app/infrastructure/settings.py` | 56 | [python.md](python.md) |
+
 ## Try it yourself
 
 Run the module's tests, which include the refused scopes.

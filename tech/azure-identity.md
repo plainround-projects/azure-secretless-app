@@ -90,6 +90,18 @@ def _error_code(error: HttpResponseError) -> str:
 
 Key Vault puts `ForbiddenByRbac` in an inner error; Storage exposes `error_code` (for example `AuthorizationPermissionMismatch`). The helper prefers the inner code, then the storage code, then the generic one, because the specific code says exactly what is missing.
 
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `src/secretless_app/infrastructure/azure_adapters.py` | 1 to 3, 16 to 18, 24, 40 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `tests/unit/infrastructure/test_azure_adapters.py` | 8, 15, 74 to 75 | [pytest.md](pytest.md) |
+| `infra/modules/container_app/main.tf` | 16 | [azure-container-apps.md](azure-container-apps.md) |
+| `pyproject.toml` | 16 | [pyproject-toml.md](pyproject-toml.md) |
+| `tests/unit/infrastructure/test_azure_errors.py` | 10 | [pytest.md](pytest.md) |
+
 ## Try it yourself
 
 Create a credential; no network call happens.

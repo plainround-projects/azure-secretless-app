@@ -1677,6 +1677,18 @@ What happens, step by step:
 
 The module docstring says: The HTTP surface; may use every other layer, nothing uses it.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `.github/workflows/ci.yml` | 18 to 20, 36 to 38 | [github-actions.md](github-actions.md) |
+| `Dockerfile` | 3, 6, 13, 20 | [docker.md](docker.md) |
+| `Makefile` | 2 to 4 | [make.md](make.md) |
+| `pyproject.toml` | 10 | [pyproject-toml.md](pyproject-toml.md) |
+
 ## Try it yourself
 
 Check which Python the project's virtual environment uses.

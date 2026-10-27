@@ -169,6 +169,30 @@ resource "azurerm_monitor_diagnostic_setting" "audit" {
 - `category = "AuditEvent"`: `category`: The name of one log category to send (for example `AuditEvent`). Here: the text `"AuditEvent"`.
 - Closing lines: `}` end the blocks opened above.
 
+
+### Where else this technology appears
+
+Lines of other files that use this technology are explained line by line in the notes of those files. This table lists where to find them.
+
+| File | Matching lines | Explained in |
+|---|---|---|
+| `infra/environments/dev/tests/dev.tftest.hcl` | 5, 78 to 79, 124 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/outputs.tf` | 2 to 3, 8, 13 | [terraform.md](terraform.md) |
+| `scripts/teardown.sh` | 19 to 21, 27 to 29 | [bash.md](bash.md) |
+| `src/secretless_app/infrastructure/azure_adapters.py` | 1, 4, 22, 33 | [azure-keyvault-secrets.md](azure-keyvault-secrets.md) |
+| `scripts/break-and-measure.sh` | 4, 25 to 26 | [bash.md](bash.md) |
+| `src/secretless_app/infrastructure/memory_adapters.py` | 1, 26, 29 | [python.md](python.md) |
+| `infra/environments/dev/main.tf` | 37, 60 | [terraform.md](terraform.md) |
+| `infra/modules/key_vault/tests/key_vault.tftest.hcl` | 15, 24 | [terraform.md](terraform.md) |
+| `pyproject.toml` | 8, 17 | [pyproject-toml.md](pyproject-toml.md) |
+| `tests/unit/infrastructure/test_azure_errors.py` | 52, 66 | [pytest.md](pytest.md) |
+| `infra/environments/dev/outputs.tf` | 7 | [terraform.md](terraform.md) |
+| `infra/environments/dev/variables.tf` | 56 | [terraform.md](terraform.md) |
+| `scripts/seed-secret.sh` | 14 | [bash.md](bash.md) |
+| `src/secretless_app/__init__.py` | 1 | [python.md](python.md) |
+| `src/secretless_app/infrastructure/azure_errors.py` | 35 | [python.md](python.md) |
+| `tests/unit/infrastructure/test_azure_adapters.py` | 55 | [pytest.md](pytest.md) |
+
 ## Try it yourself
 
 Read the module.
