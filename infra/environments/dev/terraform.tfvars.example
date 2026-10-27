@@ -1,0 +1,20 @@
+# Copy to terraform.tfvars (git-ignored) or let scripts/provision.sh write it from `az account show`.
+# None of these values is a secret; the subscription and tenant ids are still personal, so the real file stays out of git.
+
+subscription_id = "00000000-0000-0000-0000-000000000000"
+tenant_id       = "00000000-0000-0000-0000-000000000000"
+
+location    = "westeurope"
+name_prefix = "secretless"
+
+# az ad signed-in-user show --query id --output tsv
+deployer_object_id = null
+
+# Step 1 of the lesson: a budget with an alert at 80 and 100 percent.
+budget_contact_emails = ["you@example.com"]
+budget_amount         = 20
+budget_start_date     = "2026-11-01T00:00:00Z"
+
+# Phase 1 leaves these off. Phase 2 (scripts/build-and-deploy.sh) sets them.
+deploy_app = false
+image      = null
