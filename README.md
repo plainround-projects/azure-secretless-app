@@ -152,6 +152,7 @@ azure-secretless-app/
       role_assignments/  container_registry/  container_app/  budget/
     environments/dev/  the composition: variables, providers, outputs, tfvars example, tests
   scripts/             the lesson's runbook as the commands you run once the subscription exists
+  tech/                one note per technology the repository uses (34 files), taught from zero through this repository's own files; start at tech/README.md
   docs/                RUNBOOK.md and decision records (docs/adr)
   Dockerfile  Makefile  pyproject.toml  requirements*.lock  .tflint.hcl  .checkov.yaml  .github/workflows/ci.yml
 ```
