@@ -1,0 +1,98 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "azure-secretless-app"
+version = "0.1.0"
+description = "A web app that reads Key Vault and writes Blob Storage through a user-assigned managed identity, with the Azure infrastructure as Terraform."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Sumit Srivastava" }]
+dependencies = [
+    "flask>=3.1,<4",
+    "gunicorn>=23,<24",
+    "azure-identity>=1.19,<2",
+    "azure-keyvault-secrets>=4.9,<5",
+    "azure-storage-blob>=12.24,<13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "pytest-cov>=5",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "import-linter>=2.0",
+    "pip-audit>=2.7",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "N", "C4", "RUF", "PT", "D100", "D101", "D103", "D104"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]
+
+# Test functions are named for the behavior they check; annotating every one adds noise, not safety.
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "azure: needs the deployed resources and an `az login` session (make test-azure)",
+    "e2e: starts the real gunicorn server with the in-memory backend and talks to it over HTTP",
+]
+
+[tool.coverage.run]
+source = ["secretless_app"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.importlinter]
+root_package = "secretless_app"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Layers: interfaces -> infrastructure -> application -> domain, never upward"
+type = "layers"
+layers = [
+    "secretless_app.interfaces",
+    "secretless_app.infrastructure",
+    "secretless_app.application",
+    "secretless_app.domain",
+]
+
+[[tool.importlinter.contracts]]
+name = "Domain and application know nothing about Azure or Flask"
+type = "forbidden"
+source_modules = ["secretless_app.domain", "secretless_app.application"]
+forbidden_modules = ["azure", "flask", "werkzeug", "gunicorn"]
+
+[[tool.importlinter.contracts]]
+name = "Only the infrastructure layer imports the Azure SDK"
+type = "forbidden"
+source_modules = ["secretless_app.interfaces"]
+forbidden_modules = ["azure"]
+allow_indirect_imports = true
