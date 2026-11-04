@@ -7,6 +7,24 @@ A small web app on Azure Container Apps that reads an API key from Key Vault and
 
 Nothing here has been deployed: the Azure subscription does not exist yet. Everything that can be checked without one has been (see [What was verified](#what-was-verified-without-a-subscription)); the rest is a list of commands in `scripts/` that you run once the subscription exists.
 
+## Architecture
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/architecture-dark.svg">
+  <img alt="The web app ca-secretless runs as the identity id-secretless-app, which holds Key Vault Secrets User on the vault and Storage Blob Data Contributor on the uploads container; id-secretless-pull holds AcrPull on the registry, and logs flow to Log Analytics." src="docs/diagrams/architecture.svg">
+</picture>
+
+Notice that every arrow from an identity carries one role at one scope, and that no box holds a key or a connection string.
+
+## How one run flows
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/diagrams/flow-dark.svg">
+  <img alt="One POST /upload/hello.txt passes ingress, Flask and SaveUpload, takes a token from the managed identity and writes to Blob Storage; with the role removed the 403 becomes a 502." src="docs/diagrams/flow.svg">
+</picture>
+
+The run ends in 201 saved; the amber rows show a removed blob role, Storage answering 403 and the app answering 502 upstream_access_denied.
+
 ## Prerequisites
 
 | Tool | Version | Why |

@@ -34,6 +34,8 @@ The system has two outbound boundaries (the vault and the storage account) and o
 
 ## Data flow
 
+Drawn versions of this figure and of the walk-through: [the architecture](docs/diagrams/architecture.svg) and [one run](docs/diagrams/flow.svg).
+
 ```mermaid
 flowchart LR
     users["Users (client)"] -->|"POST /upload/name"| app["Web app<br/>Azure Container Apps"]

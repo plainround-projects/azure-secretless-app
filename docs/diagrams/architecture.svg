@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="t d">
+<title id="t">A secretless app on Azure</title>
+<desc id="d">Users send POST /upload/name to the web app ca-secretless on Azure Container Apps, inside resource group rg-secretless. The web app runs as the user-assigned identity id-secretless-app, which holds two roles: Key Vault Secrets User on the vault and Storage Blob Data Contributor on the uploads container. A second identity, id-secretless-pull, holds AcrPull on the registry. Console logs, AuditEvent and blob logs flow to Log Analytics. A warning note shows the failure the lesson drills: with the blob role removed, storage answers 403 and the app answers 502.</desc>
+<style>
+:root{--paper:#ffffff;--ink:#10243d;--mute:#52677f;--accent:#0a6aa8;--good:#19743f;--warn:#8a5a00}
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;fill:var(--ink)}
+.title{font-family:Georgia,'Iowan Old Style','Times New Roman',serif;font-size:36px}
+.caption{font-size:16px;fill:var(--mute)}
+.name{font-size:20px;font-weight:600}
+.lane{font-size:17px;font-weight:600}
+.sub{font-size:15px;fill:var(--mute)}
+.label{font-size:15px}
+.tag{font-size:15px;fill:var(--mute)}
+.num{font-size:15px;font-weight:700;fill:var(--paper)}
+.legend{font-size:14px;fill:var(--mute)}
+.t-accent{fill:var(--accent)}
+.t-good{fill:var(--good)}
+.t-warn{fill:var(--warn)}
+.t-ink{fill:var(--ink)}
+.b{font-weight:600}
+.paper{fill:var(--paper);stroke:var(--mute);stroke-opacity:.3}
+.grid{fill:url(#grid)}
+.boundary{fill:var(--mute);fill-opacity:.035;stroke:var(--mute);stroke-opacity:.7;stroke-dasharray:6 5}
+.svc{fill:var(--accent);fill-opacity:.08;stroke:var(--accent);stroke-width:1.25}
+.store{fill:var(--mute);fill-opacity:.1;stroke:var(--mute);stroke-width:1.25}
+.rim{fill:none;stroke:var(--mute);stroke-width:1.25}
+.actor{fill:none;stroke:var(--mute);stroke-width:1.25}
+.slot{fill:var(--accent);fill-opacity:.14;stroke:var(--accent);stroke-width:1}
+.note{fill:var(--warn);fill-opacity:.09;stroke:var(--warn);stroke-width:1}
+.win{fill:var(--good);fill-opacity:.09;stroke:var(--good);stroke-width:1}
+.hair{fill:none;stroke:var(--mute);stroke-opacity:.4;stroke-width:1}
+.zone{fill:var(--accent);fill-opacity:.045;stroke:var(--accent);stroke-width:1.25;stroke-dasharray:6 5}
+.stop{fill:none;stroke:var(--warn);stroke-width:4;stroke-linecap:round}
+.mask{fill:var(--paper)}
+.sync,.async,.read,.fail,.ok{fill:none}
+.sync{stroke:var(--accent);stroke-width:1.75;marker-end:url(#a-sync)}
+.async{stroke:var(--accent);stroke-width:1.75;stroke-dasharray:8 6;marker-end:url(#a-async)}
+.read{stroke:var(--mute);stroke-width:1.75;stroke-linecap:round;stroke-dasharray:1 6;marker-end:url(#a-read)}
+.fail{stroke:var(--warn);stroke-width:2;marker-end:url(#a-fail)}
+.ok{stroke:var(--good);stroke-width:1.75;marker-end:url(#a-ok)}
+.dot{fill:var(--accent)}
+.dot-w{fill:var(--warn)}
+.dot-g{fill:var(--good)}
+.head-sync,.head-async{stroke:var(--accent)}
+.head-sync{fill:var(--accent)}
+.head-async,.head-read{fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.head-read{stroke:var(--mute)}
+.head-fail{fill:var(--warn)}
+.head-ok{fill:var(--good)}
+.gridline{fill:none;stroke:var(--mute);stroke-opacity:.09}
+</style>
+<defs>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path class="gridline" d="M40 0H0V40"/></pattern>
+<marker id="a-sync" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="head-sync" d="M0 0L10 5L0 10z"/></marker>
+<marker id="a-async" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="head-async" d="M1 1L9 5L1 9"/></marker>
+<marker id="a-read" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="head-read" d="M1 1L9 5L1 9"/></marker>
+<marker id="a-fail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="head-fail" d="M0 0L10 5L0 10z"/></marker>
+<marker id="a-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path class="head-ok" d="M0 0L10 5L0 10z"/></marker>
+</defs>
+<rect class="paper" x="0.5" y="0.5" width="1199" height="919" rx="16"/>
+<rect class="grid" x="1" y="1" width="1198" height="918" rx="16"/>
+<text class="title" x="48" y="68">A secretless app on Azure</text>
+<text class="caption" x="48" y="100">Roles at single scopes, no secrets. Read left to right and then down: who may do what.</text>
+<rect class="boundary" x="336" y="132" width="816" height="704" rx="14"/>
+<text class="tag" x="352" y="160">Resource group rg-secretless</text>
+<rect class="svc" x="360" y="184" width="200" height="84" rx="12"/>
+<text class="name" x="376" y="216">Pull identity</text>
+<text class="sub" x="376" y="240">id-secretless-pull</text>
+<text class="sub" x="376" y="262">user-assigned</text>
+<path class="store" d="M672 196a100 12 0 0 1 200 0v94a100 12 0 0 1 -200 0z"/>
+<path class="rim" d="M672 196a100 12 0 0 0 200 0"/>
+<text class="name" x="772" y="224" text-anchor="middle">Registry</text>
+<text class="sub" x="772" y="246" text-anchor="middle">Container Registry</text>
+<text class="sub" x="772" y="268" text-anchor="middle">Basic tier</text>
+<rect class="svc" x="360" y="316" width="200" height="96" rx="12"/>
+<text class="name" x="376" y="348">Web app</text>
+<text class="sub" x="376" y="372">ca-secretless</text>
+<text class="sub" x="376" y="394">env cae-secretless</text>
+<rect class="svc" x="648" y="316" width="232" height="96" rx="12"/>
+<text class="name" x="664" y="348">App identity</text>
+<text class="sub" x="664" y="372">id-secretless-app</text>
+<text class="sub" x="664" y="394">user-assigned identity</text>
+<rect class="actor" x="48" y="328" width="136" height="72" rx="36"/>
+<text class="name" x="116" y="360" text-anchor="middle">Users</text>
+<text class="sub" x="116" y="382" text-anchor="middle">client</text>
+<path class="store" d="M648 532a116 12 0 0 1 232 0v94a116 12 0 0 1 -232 0z"/>
+<path class="rim" d="M648 532a116 12 0 0 0 232 0"/>
+<text class="name" x="764" y="560" text-anchor="middle">Key Vault</text>
+<text class="sub" x="764" y="582" text-anchor="middle">kv-secretless-&lt;suffix&gt;</text>
+<text class="sub" x="764" y="604" text-anchor="middle">secret partner-api-key</text>
+<path class="store" d="M904 532a116 12 0 0 1 232 0v94a116 12 0 0 1 -232 0z"/>
+<path class="rim" d="M904 532a116 12 0 0 0 232 0"/>
+<text class="name" x="1020" y="560" text-anchor="middle">Uploads</text>
+<text class="sub" x="1020" y="582" text-anchor="middle">stsecretless&lt;suffix&gt;</text>
+<text class="sub" x="1020" y="604" text-anchor="middle">container uploads</text>
+<path class="store" d="M648 728a244 12 0 0 1 488 0v72a244 12 0 0 1 -488 0z"/>
+<path class="rim" d="M648 728a244 12 0 0 0 488 0"/>
+<text class="name" x="892" y="756" text-anchor="middle">Logs</text>
+<text class="sub" x="892" y="778" text-anchor="middle">Log Analytics law-secretless</text>
+<rect class="note" x="896" y="184" width="240" height="142" rx="10"/>
+<text class="label b t-warn" x="912" y="214">blob role removed</text>
+<text class="sub" x="912" y="240">Storage says 403,</text>
+<text class="sub" x="912" y="262">app answers 502,</text>
+<text class="sub" x="912" y="284">upstream_access_denied</text>
+<text class="sub" x="912" y="306">make run-denied</text>
+<path class="sync" d="M184 364H360"/>
+<text class="label t-accent" x="194" y="350">POST</text>
+<text class="label t-accent" x="194" y="386">/upload/&lt;name&gt;</text>
+<path class="sync" d="M460 316V268"/>
+<text class="label t-accent" x="472" y="298">pulls as</text>
+<path class="sync" d="M560 226H672"/>
+<text class="label t-accent" x="568" y="216">AcrPull</text>
+<text class="label t-accent" x="568" y="248">on registry</text>
+<path class="sync" d="M560 364H648"/>
+<text class="label t-accent" x="568" y="354">runs as</text>
+<path class="sync" d="M764 412V520"/>
+<text class="label t-accent" text-anchor="end" x="752" y="468">Key Vault Secrets User</text>
+<text class="label t-accent" text-anchor="end" x="752" y="490">scope: the vault</text>
+<path class="sync" d="M848 412V440Q848 452 860 452H1008Q1020 452 1020 464V520"/>
+<text class="label t-accent" x="868" y="442">Storage Blob Data</text>
+<text class="label t-accent" x="868" y="474">Contributor</text>
+<text class="label t-accent" x="868" y="496">scope: uploads</text>
+<path class="async" d="M764 638V716"/>
+<text class="label t-accent" x="776" y="682">AuditEvent</text>
+<path class="async" d="M1020 638V716"/>
+<text class="label t-accent" x="1032" y="682">blob logs</text>
+<path class="async" d="M420 412V756Q420 768 432 768H648"/>
+<text class="label t-accent" x="440" y="758">console logs</text>
+<path class="fail" d="M1100 520V348"/>
+<path class="stop" d="M1088 430H1112"/>
+<text class="label t-warn" x="1120" y="436">403</text>
+<path class="sync" d="M48 876H112"/><text class="legend" x="124" y="881">sync call</text>
+<path class="async" d="M264 876H328"/><text class="legend" x="340" y="881">async message</text>
+<path class="fail" d="M696 876H760"/><text class="legend" x="772" y="881">failure path</text>
+</svg>
