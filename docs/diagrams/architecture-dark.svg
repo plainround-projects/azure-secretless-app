@@ -67,11 +67,11 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',mo
 <text class="name" x="376" y="216">Pull identity</text>
 <text class="sub" x="376" y="240">id-secretless-pull</text>
 <text class="sub" x="376" y="262">user-assigned</text>
-<path class="store" d="M672 196a100 12 0 0 1 200 0v94a100 12 0 0 1 -200 0z"/>
+<path class="store" d="M672 196a100 12 0 0 1 200 0v98a100 12 0 0 1 -200 0z"/>
 <path class="rim" d="M672 196a100 12 0 0 0 200 0"/>
-<text class="name" x="772" y="224" text-anchor="middle">Registry</text>
-<text class="sub" x="772" y="246" text-anchor="middle">Container Registry</text>
-<text class="sub" x="772" y="268" text-anchor="middle">Basic tier</text>
+<text class="name" x="772" y="228" text-anchor="middle">Registry</text>
+<text class="sub" x="772" y="250" text-anchor="middle">Container Registry</text>
+<text class="sub" x="772" y="272" text-anchor="middle">Basic tier</text>
 <rect class="svc" x="360" y="316" width="200" height="96" rx="12"/>
 <text class="name" x="376" y="348">Web app</text>
 <text class="sub" x="376" y="372">ca-secretless</text>
@@ -83,20 +83,20 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',mo
 <rect class="actor" x="48" y="328" width="136" height="72" rx="36"/>
 <text class="name" x="116" y="360" text-anchor="middle">Users</text>
 <text class="sub" x="116" y="382" text-anchor="middle">client</text>
-<path class="store" d="M648 532a116 12 0 0 1 232 0v94a116 12 0 0 1 -232 0z"/>
+<path class="store" d="M648 532a116 12 0 0 1 232 0v98a116 12 0 0 1 -232 0z"/>
 <path class="rim" d="M648 532a116 12 0 0 0 232 0"/>
-<text class="name" x="764" y="560" text-anchor="middle">Key Vault</text>
-<text class="sub" x="764" y="582" text-anchor="middle">kv-secretless-&lt;suffix&gt;</text>
-<text class="sub" x="764" y="604" text-anchor="middle">secret partner-api-key</text>
-<path class="store" d="M904 532a116 12 0 0 1 232 0v94a116 12 0 0 1 -232 0z"/>
+<text class="name" x="764" y="564" text-anchor="middle">Key Vault</text>
+<text class="sub" x="764" y="586" text-anchor="middle">kv-secretless-&lt;suffix&gt;</text>
+<text class="sub" x="764" y="608" text-anchor="middle">secret partner-api-key</text>
+<path class="store" d="M904 532a116 12 0 0 1 232 0v98a116 12 0 0 1 -232 0z"/>
 <path class="rim" d="M904 532a116 12 0 0 0 232 0"/>
-<text class="name" x="1020" y="560" text-anchor="middle">Uploads</text>
-<text class="sub" x="1020" y="582" text-anchor="middle">stsecretless&lt;suffix&gt;</text>
-<text class="sub" x="1020" y="604" text-anchor="middle">container uploads</text>
-<path class="store" d="M648 728a244 12 0 0 1 488 0v72a244 12 0 0 1 -488 0z"/>
+<text class="name" x="1020" y="564" text-anchor="middle">Uploads</text>
+<text class="sub" x="1020" y="586" text-anchor="middle">stsecretless&lt;suffix&gt;</text>
+<text class="sub" x="1020" y="608" text-anchor="middle">container uploads</text>
+<path class="store" d="M648 728a244 12 0 0 1 488 0v76a244 12 0 0 1 -488 0z"/>
 <path class="rim" d="M648 728a244 12 0 0 0 488 0"/>
-<text class="name" x="892" y="756" text-anchor="middle">Logs</text>
-<text class="sub" x="892" y="778" text-anchor="middle">Log Analytics law-secretless</text>
+<text class="name" x="892" y="760" text-anchor="middle">Logs</text>
+<text class="sub" x="892" y="782" text-anchor="middle">Log Analytics law-secretless</text>
 <rect class="note" x="896" y="184" width="240" height="142" rx="10"/>
 <text class="label b t-warn" x="912" y="214">blob role removed</text>
 <text class="sub" x="912" y="240">Storage says 403,</text>
@@ -120,13 +120,13 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',mo
 <text class="label t-accent" x="868" y="442">Storage Blob Data</text>
 <text class="label t-accent" x="868" y="474">Contributor</text>
 <text class="label t-accent" x="868" y="496">scope: uploads</text>
-<path class="async" d="M764 638V716"/>
+<path class="async" d="M764 642V716"/>
 <text class="label t-accent" x="776" y="682">AuditEvent</text>
-<path class="async" d="M1020 638V716"/>
+<path class="async" d="M1020 642V716"/>
 <text class="label t-accent" x="1032" y="682">blob logs</text>
 <path class="async" d="M420 412V756Q420 768 432 768H648"/>
 <text class="label t-accent" x="440" y="758">console logs</text>
-<path class="fail" d="M1100 520V348"/>
+<path class="fail" d="M1100 520V326"/>
 <path class="stop" d="M1088 430H1112"/>
 <text class="label t-warn" x="1120" y="436">403</text>
 <path class="sync" d="M48 876H112"/><text class="legend" x="124" y="881">sync call</text>
